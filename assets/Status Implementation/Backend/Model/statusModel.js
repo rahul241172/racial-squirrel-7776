@@ -4,7 +4,8 @@ const StatusSchema = mongoose.Schema({
     name:String,
     image:String,
     about:String,
-    views:[{default:1,type:Number}]
+    views:Number,
+    time:String
 },{ timestamps: true})
 
   const StatusModel = mongoose.model("Status",StatusSchema)

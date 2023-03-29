@@ -5,10 +5,13 @@ const StatusRouter = express.Router()
 StatusModel
 StatusRouter.post("/create",async(req,res)=>{
     const status = req.body
-let data = await StatusModel.create(status)
-let time = data.createdAt;
-// await data.save()
-req.send(time)
+    let time = datetime.toLocaleTimeString();
+let data = new StatusModel({
+
+})
+
+await data.save()
+res.send({time})
 res.send("status added successfully")
 
 })
