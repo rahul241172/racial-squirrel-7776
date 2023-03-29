@@ -8,6 +8,11 @@ require("dotenv").config();
 app.use(express.json())
 app.use("/status",StatusRouter)
 
+
+app.get("/",(req,res)=>{
+    res.send("welcome to status page")
+})
+
 app.listen(process.env.port,async()=>{
     console.log(`server is running on port ${process.env.port}`)
     try {
