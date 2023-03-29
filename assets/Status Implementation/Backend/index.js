@@ -1,11 +1,12 @@
 const { connection } = require("./Config/db");
 const express = require('express');
+const { StatusRouter } = require("./Routes/status");
 const app = express()
 require("dotenv").config();
 
 
 app.use(express.json())
-
+app.use("/status",StatusRouter)
 
 app.listen(process.env.port,async()=>{
     console.log(`server is running on port ${process.env.port}`)
