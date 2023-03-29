@@ -15,6 +15,7 @@ res.send({msg:"status added successfully",status:data})
 
 //getting status
 StatusRouter.get("/readStatus", async (req, res) => {
+    
     try {
         const status = await StatusModel.find();
         res.send(status);
