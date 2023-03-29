@@ -10,3 +10,5 @@ const StatusSchema = mongoose.Schema({
   }})
 
   const StatusModel = mongoose.model("Status",StatusSchema)
+
+  module.exports=StatusModel
