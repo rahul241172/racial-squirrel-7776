@@ -6,11 +6,24 @@ const StatusRouter = express.Router()
 StatusRouter.post("/create",async(req,res)=>{
     const status = req.body
   let data = await StatusModel.create(status)
-// await update.save()
+   // await update.save()
 
 res.send({msg:"status added successfully",status:data})
 
 })
+
+
+//getting status
+StatusRouter.get("/get", async (req, res) => {
+    try {
+        const status = await StatusModel.find();
+        res.send(status);
+    } catch (error) {
+        
+        res.send("please update status");
+    }
+})
+
 
 
 module.exports={
