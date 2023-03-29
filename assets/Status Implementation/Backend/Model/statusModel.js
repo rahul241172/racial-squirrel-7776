@@ -5,9 +5,7 @@ const StatusSchema = mongoose.Schema({
     image:String,
     about:String,
     views:[{default:1,type:Number}]
-},{ timestamps: {
-    createdAt: 'created_at' 
-  }})
+},{ timestamps: true})
 
   const StatusModel = mongoose.model("Status",StatusSchema)
 
