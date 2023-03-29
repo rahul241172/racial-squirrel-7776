@@ -4,8 +4,7 @@ const StatusSchema = mongoose.Schema({
     name:String,
     image:String,
     about:String,
-    views:{default:0,type:Number},
-    Time:String 
+    views:{default:0,type:Number}
  },{timestamps:{ createdAt: true, updatedAt: false }
 })
 
