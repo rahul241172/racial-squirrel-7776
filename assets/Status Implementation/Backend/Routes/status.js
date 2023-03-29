@@ -14,7 +14,7 @@ res.send({msg:"status added successfully",status:data})
 
 
 //getting status
-StatusRouter.get("/get", async (req, res) => {
+StatusRouter.get("/readStatus", async (req, res) => {
     try {
         const status = await StatusModel.find();
         res.send(status);
@@ -24,7 +24,17 @@ StatusRouter.get("/get", async (req, res) => {
     }
 })
 
-
+//deleting status
+StatusRouter.delete("/delete/:id", async (req, res) => {
+    const id = req.params.id;
+    try {
+        await StatusModel.findByIdAndDelete(id);
+        res.send("Status deleted");
+    } catch (error) {
+        console.log(error);
+        res.send(error);
+    }
+})
 
 module.exports={
     StatusRouter
