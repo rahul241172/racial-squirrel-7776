@@ -19,17 +19,7 @@
                 <a href="#"><ion-icon name="ellipsis-vertical"></ion-icon></a>
             </div>
         </header>
-        <div class="tabs">
-            <input type="radio" id="chats" name="group" checked>
-            <input type="radio" id="status" name="group">
-            <input type="radio" id="calls" name="group">
-
-            <div class="buttons">
-                <label for="chats">Chats</label>
-                <label for="status">Status</label>
-                <label for="calls">Calls</label>
-                <div class="underline"></div>
-            </div>
+       
 
             <div class="quickBtn">
                 <div class="btn message"><ion-icon name="chatbubble"></ion-icon></div>
@@ -53,7 +43,6 @@
                                 <div class="details">
                                     <div class="listHead">
                                         <h4>My Status</h4>
-                                        <p class="time">21/02/2022</p>
                                     </div>
                                     <div class="message_p">
                                         <p>Tap to add status update</p>
@@ -65,55 +54,21 @@
                             <div id="recent_updates">
                                 <div class="block unseen">
                                     <div class="imgbx">
-                                        <img src="./images/user.png">
+                                        <img id="image_update" src="">
                                     </div>
                                     <div class="details">
                                         <div class="listHead">
-                                            <h4>Parichaya Simha</h4>
-                                            <p class="time">04:15</p>
+                                            <h4 id="status_name"></h4>
+                                            <p class="time"></p>
                                         </div>
                                         <div class="message_p">
-                                            <p>Just Now</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-                            <label>Viewed Updates</label>
-                            <div class="block seen">
-                                <div class="imgbx">
-                                    <img src="./images/user.png">
-                                </div>
-                                <div class="details">
-                                    <div class="listHead">
-                                        <h4>Parichaya Simha</h4>
-                                        <p class="time">04:15</p>
-                                    </div>
-                                    <div class="message_p">
-                                        <p>Yesterday</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <!-- status open -->
-                        <div class="statusBox hide">
-                            <div class="status_header">
-                                <div class="imgcontent">
-
-                                    <div class="imgBx">
-                                        <img src="./images/nature.jpeg">
-                                    </div>
-                                    <h3>Alex Smith</h3>
-
-                                </div>
-                                <div class="views">
-                                    <ion-icon name="eye"></ion-icon>
-                                    <p>51</p>
-                                </div>
-                                <div><ion-icon name="close"></ion-icon></div>
-                            </div>
-                        </div>
+                       
                         <!-- status close here -->
 
                     </div>
