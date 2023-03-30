@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/css.css">
+    <title>ChitChat</title>
+
+</head>
+<body background="https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png">
+    <div class="join-container">
+        <header class="join-header">
+            <h1><i class="fas fa-smile"></i>Join Group</h1>
+        </header>
+        <main class="join-main">
+            <form  action="groupchat.html">
+                <div class="form-control">
+                    <label for="username" style="color: black;">Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        id="username"
+                        placeholder="Enter username..."
+                        required
+                    />
+                </div>
+                <div class="form-control">
+                    <label for="room" style="color: black;">Group</label>
+                    <select name="room" id="room">
+                        <option value="Family">Family</option>
+                        <option value="Business">Business</option>
+                        <option value="Friends">Friends</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Join Group</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

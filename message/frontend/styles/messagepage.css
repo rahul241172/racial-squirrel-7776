@@ -16,7 +16,7 @@ body {
 .container {
     position: relative;
     width: 1200px;
-    height: 90vh;
+    height: 600px;
     background: #fff;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
     overflow: hidden;
@@ -705,10 +705,74 @@ nav div{
 }
 
 .contact{
-    margin:5%;
+    width: 100%;
+    display: flex;
     color: black;
+  
 }
 
+.left{
+    min-width: 450px;
+}
+.left-header{
+    height: 44px;
+    background: #ededed;
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+}
+.dp{
+    height: 40;
+    width: 40;
+    border-radius: '50%';
+}
+.wrapper{
+    margin-left: auto;
+}
+.wrapper>i{
+ margin-left: 2px;
+        padding: 8px;
+        color: #000;
+}
+.wrapper:first-child {
+    font-size: 22px;
+    margin-right: 8px;
+    margin-top: 3px;
+}
+.search-left {
+    margin-top: 50px;
+}
+.right{
+    width: 73%;
+    min-width: 300px;
+    height: 100%;
+    border-left: 1px solid rgba(0, 0, 0, 0.14);
+    
+}
+.right-cont{
+    background: #f8f9fa;
+    padding: 30px 0;
+    text-align: center;
+    height: 100%;
+}
+.right-cont img{
+    margin-top: 100px;
+    width: 400px;
+}
+.right-cont h1{
+    font-size: 32px;
+    font-family: inherit;
+    font-weight: 300;
+    color: #41525d;
+    margin-top: 25px 0 10px 0;
+}
+
+.right-cont p{
+    font-size: 14px;
+    color: #667781;
+    font-weight: 400;
+    font-family: inherit;
+}
 .contact:hover{
     cursor: pointer;
 }

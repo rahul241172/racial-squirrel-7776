@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChitChat - Message</title>
     <link rel="stylesheet" href="./styles/messagepage.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -19,6 +23,13 @@
                 <a href="#"><ion-icon name="ellipsis-vertical"></ion-icon></a>
             </div>
         </header>
+        <nav>
+            <img src="./images/Logo_ChitChat.jpg" alt="">
+            <div id="logout">
+                <button id="button">Join Group Chat</button>
+                <button id="logout-btn">Log Out</button>
+            </div>
+        </nav>
         <div class="tabs">
             <input type="radio" id="chats" name="group" checked>
             <input type="radio" id="status" name="group">
@@ -39,21 +50,32 @@
                 </div>
                 <div class="btn call"><ion-icon name="call"></ion-icon></div>
             </div>
-
+            
             <div class="content">
+                
                 <div class="box chats">
-                    <nav>
-                        <img src="./images/Logo_ChitChat.jpg" alt="">
-                        <div id="btn_search">
-                            <input oninput="" id="search" type="text" placeholder="Search" name="search">
-                        </div>
-                        <div id="logout">
-                            <button id="button">Join Group Chat</button>
-                            <button id="logout-btn">Log Out</button>
-                        </div>
-                    </nav>
+                   
                     <div class="contact">
-                        
+                        <div class="left">
+                            <div class="left-header">
+                                <div class="dp">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="wrapper">
+                                    <i class="material-icons">chat</i>
+                                    <i class="material-icons">more_vert</i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="right-cont">
+                                <img src="https://i.gadgets360cdn.com/large/whatsapp_multi_device_support_update_image_1636207150180.jpg" alt="">
+                                <h1>WhatsApp Web</h1>
+                                <p>Now send and receive messages without keeping your phone online.</p>
+                                <p>Use WhatsApp on up to 4 linked devices and 1 phone at the same time.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="box status">
@@ -223,6 +245,13 @@
     </div>
 </body>
 </body>
+
 </html>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+<script>
+    const socket=io("http://localhost:8000",{transports:["websocket"]})
+   socket.emit("private-connection","hvghvh")
+
+</script>
