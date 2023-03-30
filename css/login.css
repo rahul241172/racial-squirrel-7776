@@ -69,6 +69,12 @@ body{
 .col-2 {
     width: 50%;
     float: left;
+    position: relative;
+}
+.box {
+    position: absolute;
+    top: 50%;
+    transform: translateX(25w);
 }
 
 .col-1 h3 {
@@ -109,19 +115,38 @@ iframe {
     margin-top: 50px;
 }
 
-button {
-    background-color: #00a884;
+/* button {
+    background-color: white;
     border: 0px;
     padding: 4%;
     color: white;
-    font-size: 20px;
-    justify-content: right;
+    font-size: 10px;
+    justify-content: center;
     margin-right: 50px;
+} */
+
+.box {
+    width: 70%;
+    height: auto;
+    color: black;
+    background-color: whitesmoke;
+    font-size: 5px;
+    border: none;
+    margin-left: 180px;
+
 }
 
-button {
-    width: 80%;
+.admin {
+    justify-content: right;
+    margin-top: 50px;
+    justify-items: right;
+    margin-left: 80%;
+    background-color: rgb(21, 204, 164);
 }
+.admin button{
+    border: none;
+    border-radius: 1px;
+} 
 
 a {
     color: #00a884;
