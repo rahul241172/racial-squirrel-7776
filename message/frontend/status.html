@@ -84,7 +84,7 @@
         <div class="data_area">
             <input type="text" placeholder="Enter Username" id="name" required>
             <input type="text" placeholder="Image URL" id="image" required>
-            <input type="text" placeholder="Description about Status" id="description" required>
+            <input type="text" placeholder="Description about Status" id="about" required>
            
         </div>
         <button id="create_status">Create</button>
@@ -102,7 +102,14 @@ let point = `${base}/create`;
 
 // add status
     document.querySelector("#create_status").addEventListener("click", (e) => {
-        addingStatus();
+        e.preventDefault()
+        const inputs = document.querySelectorAll("#input");
+        let obj={}
+        for(let i=0;i<inputs.length;i++){
+            obj[inputs[i].id]==inputs[i].value
+        }
+        console.log(obj)
+        // addingStatus();
         // window.location.href = "messagepage.html";
     })
 
