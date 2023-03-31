@@ -106,7 +106,7 @@ let point = `${base}/create`;
         const inputs = document.querySelectorAll("#input");
         let obj={}
         for(let i=0;i<inputs.length;i++){
-            obj[inputs[i].id]==inputs[i].value
+            obj[inputs[i].id]=inputs[i].value
         }
         console.log(obj);
         post(obj)
