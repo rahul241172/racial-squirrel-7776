@@ -97,33 +97,33 @@
     // add status
 
     document.querySelector("#create_status").addEventListener("click", () => {
-        // addStatus();
-        window.location.href = "messagepage.html";
+        addingStatus();
+        // window.location.href = "messagepage.html";
     })
 
-    // function addStatus() {
-    //     let name = document.querySelector("#name").value;
-    //     let image = document.querySelector("#image").value;
-    //     let description = document.querySelector("#description").value;
-    //     let views = document.querySelector("#views").value;
-    //     let obj = { name, image, description, views }
-    //     //console.log(obj)
+    function addingStatus() {
+        let name = document.querySelector("#name").value;
+        let image = document.querySelector("#image").value;
+        let description = document.querySelector("#description").value;
+       
+        let obj = { name, image, description }
+        console.log(obj)
 
-    //     fetch("https://shy-gray-walrus-tutu.cyclic.app/", {
-    //         method: "POST",
-    //         headers: {
-    //             "content-type": "application/json"
-    //         },
-    //         body: JSON.stringify(obj)
-    //     })
-    //         .then((response) => response.json())
-    //         .then((out) => {
-    //             console.log(out);
-    //             window.location.reload();
-    //         })
-    //         .catch((err) => console.log(err));
+        fetch("https://shy-gray-walrus-tutu.cyclic.app/status/create", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        })
+            .then((response) => response.json())
+            .then((out) => {
+                console.log(out);
+                window.location.reload();
+            })
+            .catch((err) => console.log(err));
 
-    // }
+    }
 
 
 </script>
