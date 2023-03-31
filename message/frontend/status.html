@@ -104,24 +104,24 @@
     function addingStatus() {
         let name = document.querySelector("#name").value;
         let image = document.querySelector("#image").value;
-        let description = document.querySelector("#description").value;
+        let about = document.querySelector("#description").value;
        
-        let obj = { name, image, description }
+        let obj = { name, image, about }
         console.log(obj)
 
-        fetch("https://shy-gray-walrus-tutu.cyclic.app/status/create", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(obj)
-        })
-            .then((response) => response.json())
-            .then((out) => {
-                console.log(out);
-                window.location.reload();
-            })
-            .catch((err) => console.log(err));
+        // fetch("https://shy-gray-walrus-tutu.cyclic.app/status/create", {
+        //     method: "POST",
+        //     headers: {
+        //         "content-type": "application/json"
+        //     },
+        //     body: JSON.stringify(obj)
+        // })
+        //     .then((response) => response.json())
+        //     .then((out) => {
+        //         console.log(out);
+        //         window.location.reload();
+        //     })
+        //     .catch((err) => console.log(err));
 
     }
 
