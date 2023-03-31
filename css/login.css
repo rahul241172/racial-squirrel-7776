@@ -135,6 +135,9 @@ iframe {
     margin-left: 180px;
 
 }
+.box button {
+   border-color: white;
+}
 
 .admin {
     justify-content: right;
