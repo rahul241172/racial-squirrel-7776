@@ -7,22 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChitChat - Message</title>
     <link rel="stylesheet" href="./styles/messagepage.css">
+    <link rel="shortcut icon" href="./images/Logo_ChitChat.jpg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <!-- <script src="./script/index.js"></script> -->
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <div class="action">
-                <a href="#" id="pay"><ion-icon name="qr-code-outline"></ion-icon></a>
-                <a href="#"><ion-icon name="camera-outline"></ion-icon></a>
-                <a href="#"><ion-icon name="search-outline"></ion-icon></a>
-                <a href="#"><ion-icon name="ellipsis-vertical"></ion-icon></a>
-            </div>
-        </header>
+       
+        <!-- navbar -->
         <nav>
             <img src="./images/Logo_ChitChat.jpg" alt="">
             <div id="logout">
@@ -71,9 +67,9 @@
                         <div class="right">
                             <div class="right-cont">
                                 <img src="https://i.gadgets360cdn.com/large/whatsapp_multi_device_support_update_image_1636207150180.jpg" alt="">
-                                <h1>WhatsApp Web</h1>
+                                <h1>ChitChat</h1>
                                 <p>Now send and receive messages without keeping your phone online.</p>
-                                <p>Use WhatsApp on up to 4 linked devices and 1 phone at the same time.</p>
+                                <p>Use ChitChat on up to 4 linked devices and 1 phone at the same time.</p>
                             </div>
                         </div>
                     </div>
@@ -83,13 +79,13 @@
                         <div class="chatlist" id="status_area">
                             <div class="block create_status">
                                 <div class="imgbx">
-                                    <img src="./images/user.png">
+                                    <img src="./images/3289576_user_icon.png">
                                 </div>
                                 <div class="plus">+</div>
                                 <div class="details">
                                     <div class="listHead">
                                         <h4>My Status</h4>
-                                        <p class="time">time</p>
+                                        <p class="time"></p>
                                     </div>
                                     <div class="message_p">
                                         <p>Tap to add status update</p>
@@ -101,7 +97,7 @@
                             <div id="recent_updates">
                                 <div class="block unseen">
                                     <div class="imgbx">
-                                        <img src="#">
+                                        <img src="">
                                     </div>
                                     <div class="details">
                                         <div class="listHead">
@@ -111,23 +107,6 @@
                                         <div class="message_p">
                                             <p>Just Now</p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <label>Viewed Status</label>
-                            <div class="block seen">
-                                <div class="imgbx">
-                                    <img src="#">
-                                </div>
-                                <div class="details">
-                                    <div class="listHead">
-                                        <h4>name</h4>
-                                        <p class="time">time</p>
-                                    </div>
-                                    <div class="message_p">
-                                        <p>Yesterday</p>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +196,7 @@
                 <div class="imgcontent">
                     <ion-icon name="arrow-back-sharp" class="back"></ion-icon>
                     <div class="imgBx">
-                        <img src="./images/user.png">
+                        <img src="">
                     </div>
                     <h3>#name <br><span>#Online</span></h3>
                 </div>
@@ -244,14 +223,17 @@
         </div>
     </div>
 </body>
-</body>
 
-</html>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
-<script>
-    const socket=io("http://localhost:8000",{transports:["websocket"]})
-   socket.emit("private-connection","hvghvh")
+
+ <!-- script for status -->
+ <script>
+   let status_add = document.querySelector(".block.create_status")
+status_add.addEventListener("click",()=>{
+    
+    window.location.href="status.html"
+}) 
 
 </script>
+
+</html>
+

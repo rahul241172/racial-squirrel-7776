@@ -1,0 +1,143 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/Logo_ChitChat.jpg">
+    <title>Create Status</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f2eadf;
+        }
+
+        .create_status {
+            position: relative;
+            width: 340px;
+            height: 600px;
+            background: #fff;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            /* display */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .status_header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #008069;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        #status_close {
+            font-weight: 500;
+            font-size: 25px;
+            color: orangered;
+        }
+
+        .data_area {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: 30px auto;
+        }
+
+        .data_area input {
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        #create_status {
+            width: 60%;
+            margin: auto;
+            padding: 10px;
+            background: #008069;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="create_status">
+        <div class="status_header">
+          
+            <h2>Create Status</h2>
+          
+        </div>
+        <div class="data_area">
+            <input type="text" placeholder="Enter Username" id="name" required>
+            <input type="text" placeholder="Image URL" id="image" required>
+            <input type="text" placeholder="Description about Status" id="about" required>
+           
+        </div>
+        <button id="create_status">Create</button>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    
+//base urls
+let url = "https://shy-gray-walrus-tutu.cyclic.app";
+let base = `${url}/status`;
+let point = `${base}/create`;
+
+
+// add status
+    const add = document.querySelector("#create_status")
+    add.addEventListener("click", (e) => {
+        e.preventDefault()
+        const inputs = document.querySelectorAll("input");
+        let obj={}
+        for(let i=0;i<inputs.length;i++){
+            obj[inputs[i].id]=inputs[i].value
+        }
+        console.log(obj);
+        post(obj)
+       
+    
+    })
+
+    const post = async (obj)=>{
+    try {
+        let res = await fetch(point,{ mode: 'no-cors'},{
+            method:"POST",
+            headers:{
+                'Content-Type':"application/json"
+            },
+            body:JSON.stringify(obj)
+
+        })
+        console.log(res)
+        alert("Status Updated Successfully")
+        window.location.href = "messagepage.html";
+      
+    } catch (error) {
+        alert("Status Updation failed")
+        console.log(error)
+    }
+}
+   
+
+//getting status
+
+</script>
+
+</html>
