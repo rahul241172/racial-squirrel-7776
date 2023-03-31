@@ -98,14 +98,15 @@
 let url = "https://shy-gray-walrus-tutu.cyclic.app";
 let base = `${url}/status`;
 let point = `${base}/create`;
-
+let get = `${base}/readStatus`;
 
 // add status
+    let obj={}
     const add = document.querySelector("#create_status")
     add.addEventListener("click", (e) => {
         e.preventDefault()
         const inputs = document.querySelectorAll("input");
-        let obj={}
+        
         for(let i=0;i<inputs.length;i++){
             obj[inputs[i].id]=inputs[i].value
         }
@@ -115,9 +116,9 @@ let point = `${base}/create`;
     
     })
 
-    const post = async (obj)=>{
+    const post = async(obj)=>{
     try {
-        let res = await fetch(point,{ mode: 'no-cors'},{
+        let res = await fetch(point,{
             method:"POST",
             headers:{
                 'Content-Type':"application/json"
@@ -137,6 +138,7 @@ let point = `${base}/create`;
    
 
 //getting status
+
 
 </script>
 
