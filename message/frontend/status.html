@@ -109,12 +109,29 @@ let point = `${base}/create`;
             obj[inputs[i].id]==inputs[i].value
         }
         console.log(obj);
-
+        post(obj)
         // addingStatus();
         // window.location.href = "messagepage.html";
     })
 
+    const post = async (obj)=>{
+    try {
+        let res = await fetch(point,{
+            method:"POST",
+            headers:{
+                'Content-Type':"application/json"
+            },
+            body:JSON.stringify(obj)
 
+        })
+        console.log(res)
+        alert("Status Updated Successfully")
+        location.href=("messagepage.html")
+      
+    } catch (error) {
+        alert("Status Updation failed")
+    }
+}
    
 
 </script>
