@@ -9,13 +9,36 @@
     <link rel="stylesheet" href="./styles/messagepage.css">
     <link rel="shortcut icon" href="./images/Logo_ChitChat.jpg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="./script/index.js"></script>
+    <!-- <script src="./script/index.js"></script> -->
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+     <!-- socket.io script -->
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+     <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+     
+
+
+    <!-- script for status -->
+    <script>
+        const socket=io("http://localhost:8000",{transports:["websocket"]})
+       socket.emit("private-connection","hvghvh")
+    
+    
+    
+       let status_add = document.querySelector("#status_add")
+    status_add.addEventListener("click",()=>{
+        console.log("click")
+        // window.location.href="status.html"
+    }) 
+    
+    </script>
 </head>
 
 <body>
     <div class="container">
+        <!-- //header -->
         <header>
             <div class="action">
                 <a href="#" id="pay"><ion-icon name="qr-code-outline"></ion-icon></a>
@@ -24,6 +47,7 @@
                 <a href="#"><ion-icon name="ellipsis-vertical"></ion-icon></a>
             </div>
         </header>
+        <!-- navbar -->
         <nav>
             <img src="./images/Logo_ChitChat.jpg" alt="">
             <div id="logout">
@@ -228,22 +252,7 @@
         </div>
     </div>
 </body>
-</body>
+
 
 </html>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
-<script>
-    const socket=io("http://localhost:8000",{transports:["websocket"]})
-   socket.emit("private-connection","hvghvh")
 
-
-
-   let status_add = document.querySelector("#status_add")
-status_add.addEventListener("click",()=>{
-    console.log("click")
-    // window.location.href="status.html"
-}) 
-
-</script>
