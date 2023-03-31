@@ -553,6 +553,11 @@ ion-icon {
     color: #f00;
 }
 
+#status_add{
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
 /* add and create status */
 
 .block.create_status.hide {
