@@ -111,8 +111,8 @@ let point = `${base}/create`;
         }
         console.log(obj);
         post(obj)
-        // addingStatus();
-        // window.location.href = "messagepage.html";
+    
+    
     })
 
     const post = async (obj)=>{
@@ -127,7 +127,7 @@ let point = `${base}/create`;
         })
         console.log(res)
         alert("Status Updated Successfully")
-        location.href=("/messagepage.html")
+        window.location.href = "messagepage.html";
       
     } catch (error) {
         alert("Status Updation failed")
