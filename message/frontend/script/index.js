@@ -1,6 +1,7 @@
 //status implementation
-const status_add = document.querySelector("#status_show").addEventListener("click",myfun)
-function myfun(){
+
+let status_add = document.querySelector(".block.create_status")
+status_add.addEventListener("click",()=>{
     console.log("click")
-    // window.location.href="./status.html"
-}
+    // window.location.href="status.html"
+})
