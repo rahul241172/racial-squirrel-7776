@@ -102,7 +102,7 @@
                             <div id="recent_updates">
                                 <div class="block unseen">
                                     <div class="imgbx">
-                                        <img src="#">
+                                        <img src="">
                                     </div>
                                     <div class="details">
                                         <div class="listHead">
@@ -240,9 +240,10 @@
 
 
 //status implementation
-let status_add = document.querySelector(".create_status");
-status_add.addEventListener("click",()=>{
-    window.location.href=""
+let status_add = document.querySelector(".block");
+status_add.addEventListener("onClick",()=>{
+    console.log("clivk")
+    window.location.href="./status.html"
 })
 
 
