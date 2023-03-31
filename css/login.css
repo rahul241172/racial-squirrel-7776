@@ -143,10 +143,11 @@ iframe {
     margin-left: 80%;
     background-color: rgb(21, 204, 164);
 }
-.admin button{
-    border: none;
-    border-radius: 1px;
-} 
+
+/* .admin button:hover {
+    color: black;
+
+} */
 
 a {
     color: #00a884;
@@ -155,4 +156,33 @@ a {
 #google {
 
    width: 70%;
+}
+
+.admin button{
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    text-decoration: none;
+    color:white; 
+    border: none;
+    background-color: rgb(21, 204, 164);
+}
+.admin button:after{
+ content: "";
+ position: absolute;
+ background-color: black;   
+ height: 3px;
+ width: 0%;
+ left: 0;
+ bottom: -10px;
+ transition: 0.3s;
+}
+.admin button:hover::after{
+    width: 100%;
+}
+.admin button:hover{
+    color:black;
+    font-weight: bold;
 }
