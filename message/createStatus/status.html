@@ -1,0 +1,131 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Status</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f2eadf;
+        }
+
+        .create_status {
+            position: relative;
+            width: 340px;
+            height: 600px;
+            background: #fff;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            /* display */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .status_header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #008069;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        #status_close {
+            font-weight: 500;
+            font-size: 25px;
+            color: orangered;
+        }
+
+        .data_area {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: 30px auto;
+        }
+
+        .data_area input {
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        #create_status {
+            width: 60%;
+            margin: auto;
+            padding: 10px;
+            background: #008069;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="create_status">
+        <div class="status_header">
+            <ion-icon name="file-tray-stacked"></ion-icon>
+            <h2>Create Status</h2>
+            <ion-icon id="status_close" name="close"></ion-icon>
+        </div>
+        <div class="data_area">
+            <input type="text" placeholder="Enter Username" id="name">
+            <input type="text" placeholder="Image URL" id="image">
+            <input type="text" placeholder="Description about Status" id="description">
+            <input type="text" placeholder="Enter views" id="views">
+        </div>
+        <button id="create_status">Create</button>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    document.querySelector("#status_close").addEventListener("click", () => {
+        window.location.href = "index.html";
+    })
+
+    // add status
+
+    document.querySelector("#create_status").addEventListener("click", () => {
+        addStatus();
+    })
+
+    function addStatus() {
+        let name = document.querySelector("#name").value;
+        let image = document.querySelector("#image").value;
+        let description = document.querySelector("#description").value;
+        let views = document.querySelector("#views").value;
+        let obj = { name, image, description, views }
+        //console.log(obj)
+
+        fetch("https://fierce-jay-coat.cyclic.app/status/add", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        })
+            .then((response) => response.json())
+            .then((out) => {
+                console.log(out);
+                window.location.reload();
+            })
+            .catch((err) => console.log(err));
+
+    }
+
+
+</script>
+
+</html>
