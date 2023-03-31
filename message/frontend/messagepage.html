@@ -82,7 +82,7 @@
                 <div class="box status">
                     <div class="data">
                         <div class="chatlist" id="status_area">
-                            <div class="block create_status">
+                            <div id="status_show" class="block create_status">
                                 <div class="imgbx">
                                     <img src="./images/3289576_user_icon.png">
                                 </div>
@@ -240,12 +240,12 @@
 
 
 //status implementation
-let status_add = document.querySelector(".block");
-status_add.addEventListener("onClick",()=>{
-    console.log("clivk")
-    window.location.href="./status.html"
-})
-
+const status_add = document.querySelector("#status_show");
+status_add.addEventListener("click",myfun)
+function myfun(){
+    console.log("click")
+    // window.location.href="./status.html"
+}
 
 
 </script>
