@@ -101,9 +101,10 @@ let point = `${base}/create`;
 
 
 // add status
-    document.querySelector("#create_status").addEventListener("click", (e) => {
+    const add = document.querySelector("#create_status")
+    add.addEventListener("click", (e) => {
         e.preventDefault()
-        const inputs = document.querySelectorAll("#input");
+        const inputs = document.querySelectorAll("input");
         let obj={}
         for(let i=0;i<inputs.length;i++){
             obj[inputs[i].id]=inputs[i].value
