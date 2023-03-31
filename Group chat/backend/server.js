@@ -11,11 +11,11 @@ const io=socketio(httpserver)
 
 const boatName = "ChitChat";
 
-app.use(express.static(__dirname + '/'))
+// app.use(express.static(__dirname + '/'))
 
 app.get('/', (req, res) => {
    //res.send("Welcome")
-     res.sendFile(__dirname + 'private.html')
+     res.sendFile(__dirname + '/private.html')
 })
 
 var user=null
@@ -25,13 +25,7 @@ io.on('connection', (socket) => {
     socket.on('message', (msg) => {
         socket.broadcast.emit('message', msg)
     })
-    socket.on("private-connection",(msg)=>{
-console.log(msg)
-    })
-
-
-
-
+ 
     socket.on("joinRoom", ({ username, room }) => {
 
 

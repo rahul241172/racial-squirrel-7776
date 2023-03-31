@@ -8,7 +8,7 @@
     <title>ChitChat - Message</title>
     <link rel="stylesheet" href="./styles/messagepage.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
@@ -67,6 +67,9 @@
                                 </div>
 
                             </div>
+
+                            <div id="contact-list" class="contact-list"></div>
+                            <script src="./messagepage.js"></script>
                         </div>
                         <div class="right">
                             <div class="right-cont">
@@ -75,7 +78,9 @@
                                 <p>Now send and receive messages without keeping your phone online.</p>
                                 <p>Use WhatsApp on up to 4 linked devices and 1 phone at the same time.</p>
                             </div>
+                        
                         </div>
+                        <!-- <h1>kjdfjkhjk</h1> -->
                     </div>
                 </div>
                 <div class="box status">
@@ -83,7 +88,7 @@
                         <div class="chatlist" id="status_area">
                             <div class="block create_status">
                                 <div class="imgbx">
-                                    <img src="./images/user.png">
+                                    <img src="">
                                 </div>
                                 <div class="plus">+</div>
                                 <div class="details">
@@ -217,7 +222,7 @@
                 <div class="imgcontent">
                     <ion-icon name="arrow-back-sharp" class="back"></ion-icon>
                     <div class="imgBx">
-                        <img src="./images/user.png">
+                        <img src="">
                     </div>
                     <h3>#name <br><span>#Online</span></h3>
                 </div>
@@ -247,11 +252,6 @@
 </body>
 
 </html>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
-<script>
-    const socket=io("http://localhost:8000",{transports:["websocket"]})
-   socket.emit("private-connection","hvghvh")
+<!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
 
-</script>
