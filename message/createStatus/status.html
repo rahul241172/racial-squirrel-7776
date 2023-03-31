@@ -83,7 +83,7 @@
             <input type="text" placeholder="Enter Username" id="name">
             <input type="text" placeholder="Image URL" id="image">
             <input type="text" placeholder="Description about Status" id="description">
-            <input type="text" placeholder="Enter views" id="views">
+           
         </div>
         <button id="create_status">Create</button>
     </div>
@@ -109,7 +109,7 @@
         let obj = { name, image, description, views }
         //console.log(obj)
 
-        fetch("https://fierce-jay-coat.cyclic.app/status/add", {
+        fetch("https://shy-gray-walrus-tutu.cyclic.app/", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
