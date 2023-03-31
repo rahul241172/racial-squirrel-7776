@@ -126,10 +126,11 @@ let point = `${base}/create`;
         })
         console.log(res)
         alert("Status Updated Successfully")
-        location.href=("messagepage.html")
+        location.href=("/messagepage.html")
       
     } catch (error) {
         alert("Status Updation failed")
+        console.log(error)
     }
 }
    
