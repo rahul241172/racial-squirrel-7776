@@ -86,14 +86,21 @@ function Imported(data){
         box.classList.add="unseen"
     
         let imagebox = document.createElement("div")
-        box.classList.add="imgbx"
+        imagebox.classList.add="imgbx"
         const image = document.createElement("img")
         image.src = el.image;
 
         let detailsbox = document.createElement("div")
-        box.classList.add="details"
+        detailsbox.classList.add="details"
 
+        let listbox = document.createElement("div")
+        listbox.classList.add="listHead"
+
+        let mssgbox = document.createElement("div")
+        mssgbox.classList.add="message_p"
        
+        imagebox.append(image)
+        detailsbox.append()
         box.append(imagebox,detailsbox)
         container.append(box);
     })
