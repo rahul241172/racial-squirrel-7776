@@ -15,6 +15,14 @@ app.use("/user",userRoute);
 
 app.get("/",(req,res) => {
     // res.redirect(__dirname+"../message/frontend/messagepage.html");
+    res.send("Homepage")
+})
+
+app.get("/message/frontend/messagepage.html",(req,res) => {
+    console.log(__dirname);
+    // res.send("hii")
+
+   res.sendFile(path.join(__dirname,"../message/frontend/messagepage.html"));
 })
 
 
@@ -39,8 +47,9 @@ app.get('/auth/google/callback',
         const token = jwt.sign({userID : userExist[0]._id}, tokenkey, { expiresIn: '1h' });
         const reftoken = jwt.sign({userID : userExist[0]._id}, reftokenkey, { expiresIn: '7d' });
         // res.redirect('/');
-        // res.redirect("../message/messagepage.html");
-        res.send({"message":"Login Successfull","token":token,"refresh_token":reftoken});
+        // console.log(token,reftoken);
+        res.redirect("/message/frontend/messagepage.html");
+        // res.send({"message":"Login Successfull","token":token,"refresh_token":reftoken});
     }
     else{
         const new_user = new UserModel(req.user);

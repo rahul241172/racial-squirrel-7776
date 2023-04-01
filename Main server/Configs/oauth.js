@@ -27,7 +27,7 @@ passport.use(new GoogleStrategy({
       "picture" : profile._json.picture,
       "sub" : profile._json.sub,
     }
-    console.log(profile);
+    // console.log(profile);
     return cb(null,user);
   }
 ));
