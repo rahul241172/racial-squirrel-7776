@@ -66,15 +66,12 @@ try {
 }
 };
 
-show()
-
-
 
 function Imported(data){
     
-
+    container.innerHTML="";
     data.map((el)=>{
-        container.innerHTML="";
+        
         let box = document.createElement("div")
         // box.classList.add=("block")
         box.classList.add("unseen")
@@ -100,15 +97,15 @@ function Imported(data){
         const mssg = document.createElement("p")
         time.innerText="Just Now";
 
-        imagebox.append(image)
-        listbox.append(Statusname,time)
-        mssgbox.append(mssg)
-        detailsbox.append(listbox,mssgbox)
-        box.append(imagebox,detailsbox)
+        imagebox.appendChild(image)
+        listbox.appendChild(Statusname,time)
+        mssgbox.appendChild(mssg)
+        detailsbox.appendChild(listbox,mssgbox)
+        box.appendChild(imagebox,detailsbox)
         container.append(box);
     })
   
 }
-
+show()
 
 //---------------------------------------------- status show-----------------------------------------//
