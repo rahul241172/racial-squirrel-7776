@@ -69,8 +69,8 @@ try {
 
 function Imported(data){
     
-    container.innerHTML="";
-    data.map((el)=>{
+    // container.innerHTML="";
+    data.forEach((el)=>{
         
         // const box = document.createElement("div")
         // // box.classList.add=("block")
