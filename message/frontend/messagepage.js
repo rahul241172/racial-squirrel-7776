@@ -46,12 +46,6 @@ let base = `${link}/status`;
 let get = `${base}/readStatus`;
 
 //getting status
-let imagespace = document.querySelector(".imgbox");
-let namespace = document.querySelector("#heading");
-let timespace  = document.querySelector(".time");
-let viewspace = document.querySelector("#viewcount");
-
-
 const show = async()=>{
 try {
     const res = await fetch(get,{
@@ -73,31 +67,31 @@ try {
 let container = document.querySelector("#recent_updates");
 
 function Imported(data){
-    container.innerHTML=null;
+    container.innerHTML="";
 
     data.map((el)=>{
         let box = document.createElement("div")
-        box.classList.add="block"
-        box.classList.add="unseen"
+        // box.classList.add=("block")
+        box.classList.add("unseen")
     
         let imagebox = document.createElement("div")
-        imagebox.classList.add="imgbx"
+        imagebox.classList.add("imgbx")
         const image = document.createElement("img")
         image.src = el.image;
 
         let detailsbox = document.createElement("div")
-        detailsbox.classList.add="details"
+        detailsbox.classList.add("details");
 
         let listbox = document.createElement("div")
-        listbox.classList.add="listHead"
+        listbox.classList.add("listHead");
         const Statusname=document.createElement("h4");
         Statusname.innerText=el.name;
         const time = document.createElement("p")
-        time.classList.add="time";
+        time.classList.add("time");
         time.innerText=el.createdAt;
 
         let mssgbox = document.createElement("div")
-        mssgbox.classList.add="message_p"
+        mssgbox.classList.add("message_p");
         const mssg = document.createElement("p")
         time.innerText="Just Now";
 
