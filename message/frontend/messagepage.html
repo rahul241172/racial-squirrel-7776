@@ -103,8 +103,11 @@
                             </div>
                             
                             <label >Recent Updates</label>
+                            <div id="container">
+
+                            </div>
                             <div id="recent_updates">
-                                <div class="block unseen">
+                                <!-- <div class="block unseen">
                                     <div class="imgbx">
                                         <img src="">
                                     </div>
@@ -117,25 +120,11 @@
                                             <p>Just Now</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
 
-                            <label>Viewed Updates</label>
-                            <div class="block seen">
-                                <div class="imgbx">
-                                    <img src="">
-                                </div>
-                                <div class="details">
-                                    <div class="listHead">
-                                        <h4>Parichaya Simha</h4>
-                                        <p class="time">04:15</p>
-                                    </div>
-                                    <div class="message_p">
-                                        <p>Yesterday</p>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                         </div>
                         <!-- status open -->
@@ -257,6 +246,15 @@ status_add.addEventListener("click",()=>{
     
     window.location.href="status.html"
 }) 
+
+//base urls
+let link = "https://shy-gray-walrus-tutu.cyclic.app";
+let base = `${link}/status`;
+let get = `${base}/readStatus`;
+
+//getting status 
+let recent = document.querySelector("#container");
+recent.innerHTML=""
 </script>
 
 
