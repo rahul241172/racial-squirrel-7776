@@ -38,6 +38,10 @@ for(let btn of contact){
 
 //---------------------------------------------- status show-----------------------------------------//
 
-
+let status_add = document.querySelector(".block.create_status")
+status_add.addEventListener("click",()=>{
+    
+    window.location.href="status.html"
+}) 
 
 //---------------------------------------------- status show-----------------------------------------//
