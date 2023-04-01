@@ -46,68 +46,84 @@ let base = `${link}/status`;
 let get = `${base}/readStatus`;
 
 // getting divs
-const container = document.querySelector(".block.unseen");
-
+const container = document.querySelector("#recent_updates");
+let status_box = document.querySelector(".statusBox");
 
 //getting status
-const show = async()=>{
+const show = ()=>{
 try {
-    const res = await fetch(get,{
+    fetch(get,{
         method:"GET",
         headers:{
             'Content-Type':'application/json'
         }
     })
-    const data = await res.json();
-    Imported(data)
-    console.log(data)
+    .then((res) => res.json())
+    .then((out) => {
+        let data = out.map((elem) => {
+            return Imported(elem);
+        })
+        container.innerHTML = (data.join(" "));
+        findUnseenStatus(out);
+    })
+    .catch((err) => console.log(err));
 } catch (error) {
     console.log({error:`error in getting ${error}`})
 }
 };
 
+show()
 
 function Imported(data){
     
-    // container.innerHTML="";
-    data.forEach((el)=>{
-        
-        // const box = document.createElement("div")
-        // // box.classList.add=("block")
-        // box.classList.add("unseen")
-    
-        const imagebox = document.createElement("div")
-        imagebox.classList.add("imgbx")
-        const image = document.createElement("img")
-        image.src = el.image;
-        imagebox.append(image)
-
-        const detailsbox = document.createElement("div")
-        detailsbox.classList.add("details");
-
-        const listbox = document.createElement("div")
-        listbox.classList.add("listHead");
-        const Statusname=document.createElement("h4");
-        Statusname.innerText=el.name;
-        const time = document.createElement("p")
-        time.classList.add("time");
-        time.innerText=el.createdAt;
-        listbox.append(Statusname,time)
-
-
-        const mssgbox = document.createElement("div")
-        mssgbox.classList.add("message_p");
-        const mssg = document.createElement("p")
-        time.innerText="Just Now";
-        mssgbox.append(mssg)
-        
-
-       
-        detailsbox.append(listbox,mssgbox)
-        container.append(imagebox,detailsbox);
-    })
-  
+   return (`
+   <div class="block unseen">
+    <div class="imgbx">
+        <img src=${data.image}>
+    </div>
+    <div class="details">
+        <div class="listHead">
+            <h4>${data.name}</h4>
+            <p class="time">${data.createdAt}</p>
+        </div>
+        <div class="message_p">
+            <p>Just Now</p>
+        </div>
+    </div>
+</div>
+   `)
 }
-show()
+
+
+function findUnseenStatus(out) {
+    let unseen = document.querySelectorAll("#recent_updates .block.unseen");
+    unseen.forEach((elem, i) => {
+        elem.addEventListener("click", () => {
+            status_box.innerHTML = `<div class="status_header">
+             <div class="imgcontent">
+                 <div class="imgBx">
+                     <img src=${out[i].image} style="width:80%;">
+                 </div>
+                 <h3>${out[i].name}</h3>
+             </div>
+             <div class="views">
+                 <ion-icon name="eye"></ion-icon>
+                 <p>${out[i].views}</p>
+             </div>
+             <div><ion-icon name="close"></ion-icon></div>
+         </div>`;
+            // closeIcon();
+            // status_area.classList.add("hide");
+            // status_box.classList.remove("hide");
+            // //console.log(elem);
+            // let timer = setTimeout(() => {
+            //     status_area.classList.remove("hide");
+            //     status_box.classList.add("hide");
+            //     clearTimeout(timer);
+            // }, 3000)
+        })
+    })
+    //console.log(unseen);
+}
 
 //---------------------------------------------- status show-----------------------------------------//
