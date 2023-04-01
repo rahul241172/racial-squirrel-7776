@@ -65,8 +65,9 @@ try {
             'Content-Type':'application/json'
         }
     })
+    const data = await res.json();
+    Imported(data)
 
-    
 } catch (error) {
     console.log({error:`error in getting ${error}`})
 }
