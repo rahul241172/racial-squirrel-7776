@@ -74,4 +74,21 @@ try {
 };
 
 
+
+let container = document.querySelector("#recent_updates");
+
+function Imported(data){
+    container.innerHTML=null;
+
+    data.map((el)=>{
+        let box = document.createElement("div")
+        box.classList.add="block"
+        box.classList.add="unseen"
+    
+    
+        container.append(box);
+    })
+  
+}
+
 //---------------------------------------------- status show-----------------------------------------//
