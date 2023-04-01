@@ -72,34 +72,37 @@ function Imported(data){
     // container.innerHTML="";
     data.map((el)=>{
         
-        let box = document.createElement("div")
+        const box = document.createElement("div")
         // box.classList.add=("block")
         box.classList.add("unseen")
     
-        let imagebox = document.createElement("div")
+        const imagebox = document.createElement("div")
         imagebox.classList.add("imgbx")
         const image = document.createElement("img")
         image.src = el.image;
+        imagebox.append(image)
 
-        let detailsbox = document.createElement("div")
+        const detailsbox = document.createElement("div")
         detailsbox.classList.add("details");
 
-        let listbox = document.createElement("div")
+        const listbox = document.createElement("div")
         listbox.classList.add("listHead");
         const Statusname=document.createElement("h4");
         Statusname.innerText=el.name;
         const time = document.createElement("p")
         time.classList.add("time");
         time.innerText=el.createdAt;
+        listbox.append(Statusname,time)
 
-        let mssgbox = document.createElement("div")
+
+        const mssgbox = document.createElement("div")
         mssgbox.classList.add("message_p");
         const mssg = document.createElement("p")
         time.innerText="Just Now";
-
-        imagebox.append(image)
-        listbox.append(Statusname,time)
         mssgbox.append(mssg)
+        
+
+       
         detailsbox.append(listbox,mssgbox)
         box.append(imagebox,detailsbox)
         container.append(box);
