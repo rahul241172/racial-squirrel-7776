@@ -248,19 +248,19 @@ function findUnseenStatus(out) {
     
     let unseen = document.querySelectorAll("#container .block.unseen");
     unseen.forEach((elem, i) => {
-        console.log(elem)
+       
         elem.addEventListener("click", () => {
             // console.log(out[i])
             status_box.innerHTML = `<div class="status_header">
              <div class="imgcontent">
                  <div class="imgBx">
-                     <img src=${out[i].image} style="width:80%;">
+                     <img src=${elem.image} style="width:80%;">
                  </div>
-                 <h3>${out[i].name}</h3>
+                 <h3>${elem.name}</h3>
              </div>
              <div class="views">
                  <ion-icon name="eye"></ion-icon>
-                 <p>${out[i].views}</p>
+                 <p>${elem.views}</p>
              </div>
              <div><ion-icon name="close"></ion-icon></div>
          </div>`;
