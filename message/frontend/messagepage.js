@@ -46,7 +46,7 @@ let base = `${link}/status`;
 let get = `${base}/readStatus`;
 
 // getting divs
-let container = document.querySelector("#recent_updates");
+const container = document.querySelector(".block.unseen");
 
 
 //getting status
@@ -69,12 +69,12 @@ try {
 
 function Imported(data){
     
-    // container.innerHTML="";
+    container.innerHTML="";
     data.map((el)=>{
         
-        const box = document.createElement("div")
-        // box.classList.add=("block")
-        box.classList.add("unseen")
+        // const box = document.createElement("div")
+        // // box.classList.add=("block")
+        // box.classList.add("unseen")
     
         const imagebox = document.createElement("div")
         imagebox.classList.add("imgbx")
@@ -104,8 +104,7 @@ function Imported(data){
 
        
         detailsbox.append(listbox,mssgbox)
-        box.append(imagebox,detailsbox)
-        container.append(box);
+        container.append(imagebox,detailsbox);
     })
   
 }
