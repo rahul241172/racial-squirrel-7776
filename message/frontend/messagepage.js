@@ -59,6 +59,13 @@ let viewspace = document.querySelector("#viewcount");
 
 const show = async()=>{
 try {
+    const res = await fetch(get,{
+        method:"GET",
+        headers:{
+            'Content-Type':'application/json'
+        }
+    })
+
     
 } catch (error) {
     console.log({error:`error in getting ${error}`})
