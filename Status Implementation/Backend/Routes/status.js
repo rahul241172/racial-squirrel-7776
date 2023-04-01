@@ -20,7 +20,7 @@ StatusRouter.get("/readStatus", async (req, res) => {
         const status = await StatusModel.find();
         res.send(status);
     } catch (error) {
-        
+        res.send(error)
         res.send("please update status");
     }
 })
