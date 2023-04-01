@@ -95,12 +95,18 @@ function Imported(data){
 
         let listbox = document.createElement("div")
         listbox.classList.add="listHead"
+        const name=document.createElement("h4");
+        name.innerText=el.name;
+        const time = document.createElement("p")
+        time.classList.add="time";
+        time.innerText=el.createdAt;
 
         let mssgbox = document.createElement("div")
         mssgbox.classList.add="message_p"
        
         imagebox.append(image)
-        detailsbox.append()
+        listbox.append(name,time)
+        detailsbox.append(listbox,mssgbox)
         box.append(imagebox,detailsbox)
         container.append(box);
     })
