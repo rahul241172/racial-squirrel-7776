@@ -239,17 +239,18 @@ let get = `${base}/readStatus`;
 
 //getting status 
 let recent = document.querySelector("#container");
-
-
 let status_box = document.querySelector(".statusBox");
 let status_area = document.querySelector("#status_area");
 
+
+//status open function
 function findUnseenStatus(out) {
     
     let unseen = document.querySelectorAll("#container .block.unseen");
     unseen.forEach((elem, i) => {
+        console.log(elem)
         elem.addEventListener("click", () => {
-            console.log(out[i])
+            // console.log(out[i])
             status_box.innerHTML = `<div class="status_header">
              <div class="imgcontent">
                  <div class="imgBx">
@@ -274,11 +275,11 @@ function findUnseenStatus(out) {
             }, 5000)
         })
     })
-    //console.log(unseen);
+    console.log(unseen);
 }
 
 
-// close option
+// status close function
 function closeIcon() {
     let closes = document.querySelector(".statusBox .status_header").childNodes[5];
     closes.addEventListener("click", () => {
