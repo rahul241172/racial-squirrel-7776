@@ -38,10 +38,19 @@ for(let btn of contact){
 
 //---------------------------------------------- status show-----------------------------------------//
 
+//create status
 let status_add = document.querySelector(".block.create_status")
 status_add.addEventListener("click",()=>{
     
     window.location.href="status.html"
 }) 
+
+
+//getting status
+let imagespace = document.querySelector(".imgbox");
+let namespace = document.querySelector("#heading");
+let imagespace = document.querySelector(".imgbox")
+
+
 
 //---------------------------------------------- status show-----------------------------------------//
