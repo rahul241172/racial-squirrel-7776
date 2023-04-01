@@ -79,15 +79,12 @@
                     </div>
                 </div>
                 <div class="box status">
+                    
                     <div class="data">
                         <div class="chatlist" id="status_area">
                             <div class="block create_status">
                                 <div class="imgbx">
-<<<<<<< fw23_0418_day_4
-                                    <img src="">
-=======
                                     <img src="./images/3289576_user_icon.png">
->>>>>>> main
                                 </div>
                                 <div class="plus">+</div>
                                 <div class="details">
@@ -101,7 +98,8 @@
                                 </div>
 
                             </div>
-                            <label>Recent Status</label>
+                            
+                            <label >Recent Updates</label>
                             <div id="recent_updates">
                                 <div class="block unseen">
                                     <div class="imgbx">
@@ -109,8 +107,8 @@
                                     </div>
                                     <div class="details">
                                         <div class="listHead">
-                                            <h4>name</h4>
-                                            <p class="time">time</p>
+                                            <h4>Parichaya Simha</h4>
+                                            <p class="time">04:15</p>
                                         </div>
                                         <div class="message_p">
                                             <p>Just Now</p>
@@ -118,6 +116,24 @@
                                     </div>
                                 </div>
                             </div>
+
+
+                            <label>Viewed Updates</label>
+                            <div class="block seen">
+                                <div class="imgbx">
+                                    <img src="">
+                                </div>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>Parichaya Simha</h4>
+                                        <p class="time">04:15</p>
+                                    </div>
+                                    <div class="message_p">
+                                        <p>Yesterday</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                         <!-- status open -->
                         <div class="statusBox hide">
@@ -132,7 +148,7 @@
                                 </div>
                                 <div class="views">
                                     <ion-icon name="eye"></ion-icon>
-                                    <p>51</p>
+                                    <p id="viewcount"></p>
                                 </div>
                                 <div><ion-icon name="close"></ion-icon></div>
                             </div>
@@ -231,17 +247,16 @@
         </div>
     </div>
 </body>
-
-
- <!-- script for status -->
- <script>
-   let status_add = document.querySelector(".block.create_status")
+<script>
+    //create status
+let status_add = document.querySelector(".block.create_status")
 status_add.addEventListener("click",()=>{
     
     window.location.href="status.html"
 }) 
-
 </script>
+
+
 
 </html>
 
