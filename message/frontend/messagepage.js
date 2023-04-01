@@ -69,7 +69,7 @@ try {
 
 function Imported(data){
     
-    container.innerHTML="";
+    // container.innerHTML="";
     data.map((el)=>{
         
         let box = document.createElement("div")
@@ -97,11 +97,11 @@ function Imported(data){
         const mssg = document.createElement("p")
         time.innerText="Just Now";
 
-        imagebox.appendChild(image)
-        listbox.appendChild(Statusname,time)
-        mssgbox.appendChild(mssg)
-        detailsbox.appendChild(listbox,mssgbox)
-        box.appendChild(imagebox,detailsbox)
+        imagebox.append(image)
+        listbox.append(Statusname,time)
+        mssgbox.append(mssg)
+        detailsbox.append(listbox,mssgbox)
+        box.append(imagebox,detailsbox)
         container.append(box);
     })
   
