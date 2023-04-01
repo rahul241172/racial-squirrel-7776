@@ -106,22 +106,7 @@
                             <div id="container">
 
                             </div>
-                            <div id="recent_updates">
-                                <!-- <div class="block unseen">
-                                    <div class="imgbx">
-                                        <img src="">
-                                    </div>
-                                    <div class="details">
-                                        <div class="listHead">
-                                            <h4>Parichaya Simha</h4>
-                                            <p class="time">04:15</p>
-                                        </div>
-                                        <div class="message_p">
-                                            <p>Just Now</p>
-                                        </div>
-                                    </div>
-                                </div> -->
-                            </div>
+                            
 
 
                            
@@ -256,6 +241,53 @@ let get = `${base}/readStatus`;
 let recent = document.querySelector("#container");
 
 
+let status_box = document.querySelector(".statusBox");
+let status_area = document.querySelector("#status_area");
+
+function findUnseenStatus(out) {
+    let unseen = document.querySelectorAll("#container .block.unseen");
+    unseen.forEach((elem, i) => {
+        elem.addEventListener("click", () => {
+            status_box.innerHTML = `<div class="status_header">
+             <div class="imgcontent">
+                 <div class="imgBx">
+                     <img src=${out[i].image} style="width:80%;">
+                 </div>
+                 <h3>${out[i].name}</h3>
+             </div>
+             <div class="views">
+                 <ion-icon name="eye"></ion-icon>
+                 <p>${out[i].views}</p>
+             </div>
+             <div><ion-icon name="close"></ion-icon></div>
+         </div>`;
+            closeIcon();
+            status_area.classList.add("hide");
+            status_box.classList.remove("hide");
+            //console.log(elem);
+            let timer = setTimeout(() => {
+                status_area.classList.remove("hide");
+                status_box.classList.add("hide");
+                clearTimeout(timer);
+            }, 3000)
+        })
+    })
+    //console.log(unseen);
+}
+
+
+// close option
+function closeIcon() {
+    let closes = document.querySelector(".statusBox .status_header").childNodes[5];
+    closes.addEventListener("click", () => {
+        status_area.classList.remove("hide");
+        status_box.classList.add("hide");
+    })
+}
+
+
+
+//fetching function
 function statusData() {
     fetch(get, {
         method: "GET",
@@ -269,7 +301,7 @@ function statusData() {
                 return renderStatus(elem);
             })
             recent.innerHTML = (data.join(" "));
-            
+            findUnseenStatus(out);
         })
         .catch((err) => console.log(err));
 }
