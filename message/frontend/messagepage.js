@@ -46,8 +46,8 @@ status_add.addEventListener("click",()=>{
 }) 
 
 //base urls
-let url = "https://shy-gray-walrus-tutu.cyclic.app";
-let base = `${url}/status`;
+let link = "https://shy-gray-walrus-tutu.cyclic.app";
+let base = `${link}/status`;
 let get = `${base}/readStatus`;
 
 //getting status
@@ -95,8 +95,8 @@ function Imported(data){
 
         let listbox = document.createElement("div")
         listbox.classList.add="listHead"
-        const name=document.createElement("h4");
-        name.innerText=el.name;
+        const Statusname=document.createElement("h4");
+        Statusname.innerText=el.name;
         const time = document.createElement("p")
         time.classList.add="time";
         time.innerText=el.createdAt;
@@ -107,7 +107,7 @@ function Imported(data){
         time.innerText="Just Now";
 
         imagebox.append(image)
-        listbox.append(name,time)
+        listbox.append(Statusname,time)
         detailsbox.append(listbox,mssgbox)
         box.append(imagebox,detailsbox)
         container.append(box);
