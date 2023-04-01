@@ -45,12 +45,25 @@ status_add.addEventListener("click",()=>{
     window.location.href="status.html"
 }) 
 
+//base urls
+let url = "https://shy-gray-walrus-tutu.cyclic.app";
+let base = `${url}/status`;
+let get = `${base}/readStatus`;
 
 //getting status
 let imagespace = document.querySelector(".imgbox");
 let namespace = document.querySelector("#heading");
-let imagespace = document.querySelector(".imgbox")
+let timespace  = document.querySelector(".time");
+let viewspace = document.querySelector("#viewcount");
 
+
+const show = async()=>{
+try {
+    
+} catch (error) {
+    console.log({error:`error in getting ${error}`})
+}
+};
 
 
 //---------------------------------------------- status show-----------------------------------------//
