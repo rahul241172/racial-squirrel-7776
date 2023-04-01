@@ -33,22 +33,24 @@
                             </div>
                             <div class="details" id="create_call">
                                 <div class="listHead">
-                                    <h4>User Count : <span>0</span></h4>
+                                    <h4>User Count : <span id="user-count">0</span></h4>
                                 </div>
                             </div>
                         </div>
                         <label>Users</label>
-                        <div class="block">
-                            <div class="imgbx">
-                                <img src="#">
-                            </div>
-                            <div class="details">
-                                <div class="listHead">
-                                    <h4>#name</h4>
+                        <div id="user-card">
+                            <div class="block">
+                                <div class="imgbx">
+                                    <img src="#">
                                 </div>
-                            </div>
-                            <div class="ban">
-                                <button id="ban-user">Block User</button>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>#name</h4>
+                                    </div>
+                                </div>
+                                <div class="ban">
+                                    <button class="ban-user" id="ban-user">Block User</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,3 +135,4 @@
         $('header').load('header.html');
     }) 
 </script>
+<script src="./scripts/adminpage.js"></script>
