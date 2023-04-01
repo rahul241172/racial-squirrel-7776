@@ -59,7 +59,7 @@ try {
         }
     })
     const data = await res.json();
-    // Imported(data)
+    Imported(data)
     console.log(data)
 } catch (error) {
     console.log({error:`error in getting ${error}`})
@@ -71,9 +71,10 @@ show()
 
 
 function Imported(data){
-    container.innerHTML="";
+    
 
     data.map((el)=>{
+        container.innerHTML="";
         let box = document.createElement("div")
         // box.classList.add=("block")
         box.classList.add("unseen")
