@@ -38,12 +38,7 @@ for(let btn of contact){
 
 //---------------------------------------------- status show-----------------------------------------//
 
-//create status
-let status_add = document.querySelector(".block.create_status")
-status_add.addEventListener("click",()=>{
-    
-    window.location.href="status.html"
-}) 
+
 
 //base urls
 let link = "https://shy-gray-walrus-tutu.cyclic.app";
@@ -108,6 +103,7 @@ function Imported(data){
 
         imagebox.append(image)
         listbox.append(Statusname,time)
+        mssgbox.append(mssg)
         detailsbox.append(listbox,mssgbox)
         box.append(imagebox,detailsbox)
         container.append(box);
