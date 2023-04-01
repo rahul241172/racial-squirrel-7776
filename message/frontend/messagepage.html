@@ -106,23 +106,7 @@
                             <div id="container">
 
                             </div>
-                            
-
-                            <label>Viewed Updates</label>
-                            <div class="block seen">
-                                <!-- <div class="imgbx">
-                                    <img src="./images/user.png">
-                                </div>
-                                <div class="details">
-                                    <div class="listHead">
-                                        <h4>Parichaya Simha</h4>
-                                        <p class="time">04:15</p>
-                                    </div>
-                                    <div class="message_p">
-                                        <p>Yesterday</p>
-                                    </div>
-                                </div> -->
-                            </div>
+                        
                         </div>
 
                            
@@ -130,7 +114,7 @@
                         </div>
                         <!-- status open -->
                         <div class="statusBox hide">
-                            <div class="status_header">
+                            <!-- <div class="status_header">
                                 <div class="imgcontent">
 
                                     <div class="imgBx">
@@ -144,7 +128,7 @@
                                     <p id="viewcount"></p>
                                 </div>
                                 <div><ion-icon name="close"></ion-icon></div>
-                            </div>
+                            </div> -->
                         </div>
                         <!-- status close here -->
 
@@ -261,9 +245,11 @@ let status_box = document.querySelector(".statusBox");
 let status_area = document.querySelector("#status_area");
 
 function findUnseenStatus(out) {
+    
     let unseen = document.querySelectorAll("#container .block.unseen");
     unseen.forEach((elem, i) => {
         elem.addEventListener("click", () => {
+            console.log(out[i])
             status_box.innerHTML = `<div class="status_header">
              <div class="imgcontent">
                  <div class="imgBx">
@@ -285,7 +271,7 @@ function findUnseenStatus(out) {
                 status_area.classList.remove("hide");
                 status_box.classList.add("hide");
                 clearTimeout(timer);
-            }, 3000)
+            }, 5000)
         })
     })
     //console.log(unseen);
