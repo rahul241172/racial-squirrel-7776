@@ -45,6 +45,10 @@ let link = "https://shy-gray-walrus-tutu.cyclic.app";
 let base = `${link}/status`;
 let get = `${base}/readStatus`;
 
+// getting divs
+let container = document.querySelector("#recent_updates");
+
+
 //getting status
 const show = async()=>{
 try {
@@ -55,16 +59,16 @@ try {
         }
     })
     const data = await res.json();
-    Imported(data)
-
+    // Imported(data)
+    console.log(data)
 } catch (error) {
     console.log({error:`error in getting ${error}`})
 }
 };
 
+show()
 
 
-let container = document.querySelector("#recent_updates");
 
 function Imported(data){
     container.innerHTML="";
@@ -105,5 +109,5 @@ function Imported(data){
   
 }
 
-show()
+
 //---------------------------------------------- status show-----------------------------------------//
