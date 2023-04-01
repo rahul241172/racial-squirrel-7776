@@ -101,12 +101,11 @@ function Imported(data){
         time.classList.add="time";
         time.innerText=el.createdAt;
 
-        let mssgbox = document.createElement("div")
-        mssgbox.classList.add="message_p"
-       
+        
+
         imagebox.append(image)
         listbox.append(name,time)
-        detailsbox.append(listbox,mssgbox)
+        detailsbox.append(listbox)
         box.append(imagebox,detailsbox)
         container.append(box);
     })
