@@ -1,15 +1,15 @@
-var user=[{name: 'John', profile:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"},{name: 'John', profile:"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"}];
-var url=""
+
+var url="https://wild-gray-gorilla-garb.cyclic.app"
 
 
 window.addEventListener("load",function(){
-    // fetch(url)
-// .then(res=> res.json)
-// .then((data)=>{
-//     user=data;
-// })
-    displayContact(user)
-    console.log(user)
+    fetch(`${url}/user/all`)
+.then((res)=> res.json())
+.then((data)=>{
+    displayContact(data)
+    console.log(data)
+})
+   
 })
 const cont=document.getElementById("contact-list")
 
@@ -18,7 +18,7 @@ function displayContact(user){
    user.forEach(element => {
     let div=document.createElement("div")
     let img=document.createElement("img")
-    img.src=element.profile
+    img.src=element.picture
     let name=document.createElement("p")
     name.classList.add("contact-btn")
     name.textContent=element.name
