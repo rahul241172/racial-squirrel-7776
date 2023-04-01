@@ -251,7 +251,8 @@ function findUnseenStatus(out) {
        
         elem.addEventListener("click", () => {
             // console.log(out[i])
-            status_box.innerHTML = `<div class="status_header">
+            status_box.innerHTML = `
+            <div class="status_header">
              <div class="imgcontent">
                  <div class="imgBx">
                      <img src=${out[i].image} style="width:80%;">
@@ -264,15 +265,15 @@ function findUnseenStatus(out) {
              </div>
              <div><ion-icon name="close"></ion-icon></div>
          </div>`;
-            closeIcon();
-            status_area.classList.add("hide");
-            status_box.classList.remove("hide");
-            //console.log(elem);
-            let timer = setTimeout(() => {
-                status_area.classList.remove("hide");
-                status_box.classList.add("hide");
-                clearTimeout(timer);
-            }, 5000)
+            // closeIcon();
+            // status_area.classList.add("hide");
+            // status_box.classList.remove("hide");
+            // //console.log(elem);
+            // let timer = setTimeout(() => {
+            //     status_area.classList.remove("hide");
+            //     status_box.classList.add("hide");
+            //     clearTimeout(timer);
+            // }, 5000)
         })
     })
     
@@ -280,13 +281,13 @@ function findUnseenStatus(out) {
 
 
 // status close function
-function closeIcon() {
-    let closes = document.querySelector(".statusBox .status_header").childNodes[5];
-    closes.addEventListener("click", () => {
-        status_area.classList.remove("hide");
-        status_box.classList.add("hide");
-    })
-}
+// function closeIcon() {
+//     let closes = document.querySelector(".statusBox .status_header").childNodes[5];
+//     closes.addEventListener("click", () => {
+//         status_area.classList.remove("hide");
+//         status_box.classList.add("hide");
+//     })
+// }
 
 
 
