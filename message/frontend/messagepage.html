@@ -254,13 +254,13 @@ function findUnseenStatus(out) {
             status_box.innerHTML = `<div class="status_header">
              <div class="imgcontent">
                  <div class="imgBx">
-                     <img src=${elem.image} style="width:80%;">
+                     <img src=${out[i].image} style="width:80%;">
                  </div>
-                 <h3>${elem.name}</h3>
+                 <h3>${out[i].name}</h3>
              </div>
              <div class="views">
                  <ion-icon name="eye"></ion-icon>
-                 <p>${elem.views}</p>
+                 <p>${out[i].views}</p>
              </div>
              <div><ion-icon name="close"></ion-icon></div>
          </div>`;
@@ -275,7 +275,7 @@ function findUnseenStatus(out) {
             }, 5000)
         })
     })
-    console.log(unseen);
+    
 }
 
 
