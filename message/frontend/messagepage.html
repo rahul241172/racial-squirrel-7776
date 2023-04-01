@@ -254,7 +254,45 @@ let get = `${base}/readStatus`;
 
 //getting status 
 let recent = document.querySelector("#container");
-recent.innerHTML=""
+
+
+function statusData() {
+    fetch(get, {
+        method: "GET",
+        headers: {
+            "content-type": "application/json"
+        }
+    })
+        .then((res) => res.json())
+        .then((out) => {
+            let data = out.map((elem) => {
+                return renderStatus(elem);
+            })
+            recent.innerHTML = (data.join(" "));
+            
+        })
+        .catch((err) => console.log(err));
+}
+statusData();
+
+//function to display
+function renderStatus(data) {
+    return (`<div class="block unseen">
+    <div class="imgbx">
+        <img src=${data.image}>
+    </div>
+    <div class="details">
+        <div class="listHead">
+            <h4>${data.name}</h4>
+            <p class="time">${data.createdAt}</p>
+        </div>
+        <div class="message_p">
+            <p>Just Now</p>
+        </div>
+    </div>
+</div>`)
+}
+
 </script>
 
 
