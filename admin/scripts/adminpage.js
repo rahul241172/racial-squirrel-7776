@@ -4,17 +4,25 @@ let userCard=document.getElementById('user-card')
 let totalUser=document.getElementById('user-count');
 let Userdata=[];
 
-fetch('#')
-,then((res)=>{
+function fetchData(){
+    fetch('https://wild-gray-gorilla-garb.cyclic.app/user/all')
+    .then((res)=>{
     return res.json();
 })
 .then((needData)=>{
     Userdata=needData.data;
     displayUsers(needData.data);
+    Count(Userdata.length)
 })
 .catch((err)=>{
     console.log({'fetch-msg':err.message});
 })
+}
+fetchData();
+
+function Count(count){
+    totalUser.innerText=count
+}
 
 // getting all users
 
@@ -26,7 +34,7 @@ function displayUsers(data) {
         let imgbx=document.createElement('div');
         imgbx.className="imgbx";
         let image=document.createElement('img');
-        image.setAttribute("src",element.image);
+        image.setAttribute("src",element.picture);
         imgbx.append(image);
         let details=document.createElement('div');
         details.className="details"
@@ -45,3 +53,20 @@ function displayUsers(data) {
         card.append(imgbx,details,ban);
     })
 }
+
+// block the users 
+
+let block=document.getElementsByClassName('ban-user');
+block.addEventListner('click',(e)=>{
+    fetch("https://wild-gray-gorilla-garb.cyclic.app/user/:id",{
+        method:"DELETE",
+        headers:{
+            "Content-type":"application/json"
+        }   
+    })
+    .then(res=>res.json())
+    .then(res=>console.log(res))
+    .then(err=>console.log(err))
+})
+    
+
