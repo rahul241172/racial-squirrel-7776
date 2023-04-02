@@ -308,7 +308,30 @@
     statusData();
 
 
+    //getting time
+    
+    function timer(){
+        var now = new Date().getTime();
+         var distance =  now;
+  
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        var minutes =Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));;
+        var hours = 0;
 
+        if(seconds == 59){
+          return`${minutes} minutes ago`
+            // return `${minutes} minutes ago`
+        }else{
+            return `${seconds} seconds ago`
+        }
+    }
+
+     setInterval(function() {
+        
+       timer()
+    }, 1000);
+    
+       
     //function to display
     function renderStatus(data) {
         recent.innerHTML = `
@@ -324,7 +347,7 @@
                                     <p class="time">${el.time}</p>
                                 </div>
                                 <div class="message_p">
-                                    <p>Just Now</p>
+                                    <p id="timeset">${timer()}</p>
                                 </div>
                             </div>
                         </div>`
