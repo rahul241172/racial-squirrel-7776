@@ -109,6 +109,7 @@ let get = `${base}/readStatus`;
         
         for(let i=0;i<inputs.length;i++){
             obj[inputs[i].id]=inputs[i].value
+            obj["time"]=new Date().toLocaleTimeString();
         }
         console.log(obj);
         post(obj)
