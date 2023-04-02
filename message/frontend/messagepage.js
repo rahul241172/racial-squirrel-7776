@@ -6,8 +6,8 @@ window.addEventListener("load",function(){
     fetch(`${url}/user/all`)
 .then((res)=> res.json())
 .then((data)=>{
-    displayContact(data)
     console.log(data)
+    displayContact(data)
 })
    
 })
