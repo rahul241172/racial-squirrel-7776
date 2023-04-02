@@ -309,10 +309,9 @@
 
 
     //getting time
-    const timeset = document.querySelector("#timeset")
-   
-    var timer = setInterval(function() {
-         var now = new Date().getTime();
+    // const timeset = document.querySelector("#timeset")
+    function timer(){
+        var now = new Date().getTime();
          var distance =  now;
   
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -320,12 +319,16 @@
         var hours = 0;
 
         if(seconds == 59){
-           timeset.innerText = `${minutes} minutes ago`
+          return`${minutes} minutes ago`
             // return `${minutes} minutes ago`
         }else{
-            timeset.innerText = `${seconds} seconds ago`
+            return `${seconds} seconds ago`
         }
-       
+    }
+
+     setInterval(function() {
+        
+       timer()
     }, 1000);
     
        
@@ -350,7 +353,7 @@
                                     <p class="time">${el.time}</p>
                                 </div>
                                 <div class="message_p">
-                                    <p id="timeset"></p>
+                                    <p id="timeset">${timer()}</p>
                                 </div>
                             </div>
                         </div>`
