@@ -9,7 +9,8 @@ var GoogleStrategy = require('passport-google-oauth20').Strategy;
 passport.use(new GoogleStrategy({
     clientID: client_id,
     clientSecret: client_key,
-    callbackURL: "http://localhost:4500/auth/google/callback"
+    callbackURL: "https://wild-gray-gorilla-garb.cyclic.app/auth/google/callback",
+    passReqToCallback: true
   },
   function(accessToken, refreshToken, profile, cb) {
     // const user_email = profile.__json.email;
