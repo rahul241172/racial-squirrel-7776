@@ -309,12 +309,34 @@
 
 
     //getting time
-    
-    function timer(date) {
-      
-        
+    const justTime = document.querySelector(".message_p")
+   
 
-    }
+           
+            var x =  setInterval(()=> {
+         var now = new Date().getTime();
+
+  
+         var distance =  now;
+  
+         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        justTime.innerHTML= minutes + "minutes " + seconds + "seconds ago ";
+  
+        console.log(minutes,seconds)
+
+    }, 1000);
+   
+   
+ 
+    
+
+  
+
+
+ 
     
 
 
@@ -333,7 +355,7 @@
                                     <p class="time">${el.time}</p>
                                 </div>
                                 <div class="message_p">
-                                    <p>${myfun()}</p>
+                                    <p>just now</p>
                                 </div>
                             </div>
                         </div>`
