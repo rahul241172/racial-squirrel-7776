@@ -4,6 +4,7 @@ let userCard=document.getElementById('user-card')
 let totalUser=document.getElementById('user-count');
 // let Userdata;
 
+
 fetch('https://wild-gray-gorilla-garb.cyclic.app/user/all')
 .then((res)=>{
     return res.json();
@@ -12,10 +13,17 @@ fetch('https://wild-gray-gorilla-garb.cyclic.app/user/all')
     // Userdata=needData.data;
     console.log(data)
     displayUsers(data);
+
 })
 .catch((err)=>{
     console.log({'fetch-msg':err.message});
 })
+}
+fetchData();
+
+function Count(count){
+    totalUser.innerText=count
+}
 
 // getting all users
 
@@ -48,6 +56,7 @@ function displayUsers(data) {
         userCard.append(card);
         totalUser.innerText=data.length;
     })
+
     let block=document.querySelectorAll(".ban-user")
 
     block.forEach((element)=>{
@@ -65,3 +74,4 @@ function displayUsers(data) {
         });
     })
 }
+
