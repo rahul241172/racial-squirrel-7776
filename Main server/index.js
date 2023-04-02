@@ -56,7 +56,7 @@ app.get('/auth/google/callback',
         await new_user.save();
         // console.log("User created");
         // res.redirect('/');
-        res.send({"message":"User Registered Successfully"});
+        res.redirect("/message/frontend/messagepage.html");
     }
     
   });
