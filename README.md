@@ -46,3 +46,10 @@ Group Chat
 
 ![](assets/admin.png)
 
+# How to run the Chat server
+
+just go to Group chat folder and run command below:-
+
+# npm run server
+
+
