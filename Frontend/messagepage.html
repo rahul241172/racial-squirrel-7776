@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChitChat - Message</title>
+    <link rel="stylesheet" href="./css/messagepage.css">
+    <link rel="shortcut icon" href="./images/Logo_ChitChat.jpg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+        integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+        crossorigin="anonymous"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- navbar -->
+        <nav>
+            <img src="./images/Logo_ChitChat.jpg" alt="">
+            <div id="logout">
+                <a href="./joinroom.html"><button id="button">Join Group Chat</button></a>
+                <a href="./login.html"><button id="logout-btn">Log Out</button></a>
+            </div>
+        </nav>
+        <div class="tabs">
+            <input type="radio" id="chats" name="group" checked>
+            <input type="radio" id="status" name="group">
+            <input type="radio" id="calls" name="group">
+
+            <div class="buttons">
+                <label for="chats">Chats</label>
+                <label for="status">Status</label>
+                <label for="calls">Calls</label>
+                <div class="underline"></div>
+            </div>
+
+            <div class="quickBtn">
+                <div class="btn message"><ion-icon name="chatbubble"></ion-icon></div>
+                <div class="btn camera">
+                    <div class="pencil"><ion-icon name="pencil"></ion-icon></div>
+                    <ion-icon name="camera"></ion-icon>
+                </div>
+                <div class="btn call"><ion-icon name="call"></ion-icon></div>
+            </div>
+
+            <div class="content">
+                <div class="box chats">
+
+                    <div class="contact">
+                        <div class="left">
+                            <div class="left-header">
+                                <div class="dp">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="wrapper">
+                                    <i class="material-icons">chat</i>
+                                    <i class="material-icons">more_vert</i>
+                                </div>
+
+                            </div>
+
+                            <div id="contact-list" class="contact-list"></div>
+
+                        </div>
+                        <div class="right">
+                            <div class="right-cont">
+                                <img src="https://i.gadgets360cdn.com/large/whatsapp_multi_device_support_update_image_1636207150180.jpg"
+                                    alt="">
+                                <h1>ChitChat</h1>
+                                <p>Now send and receive messages without keeping your phone online.</p>
+                                <p>Use ChitChat on up to 4 linked devices and 1 phone at the same time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box status">
+
+                    <div class="data">
+                        <div class="chatlist" id="status_area">
+                            <div class="block create_status">
+                                <div class="imgbx">
+                                    <img src="./images/3289576_user_icon.png">
+                                </div>
+                                <div class="plus">+</div>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>My Status</h4>
+                                        <p class="time"></p>
+                                    </div>
+                                    <div class="message_p">
+                                        <p>Tap to add status update</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <label>Recent Updates</label>
+                            <div id="recent_updates">
+                                <div class="block unseen">
+                                    <div class="imgbx">
+                                        <img src="">
+                                    </div>
+                                    <div class="details">
+                                        <div class="listHead">
+                                            <h4>Parichaya Simha</h4>
+                                            <p class="time">04:15</p>
+                                        </div>
+                                        <div class="message_p">
+                                            <p>Just Now</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <label>Viewed Updates</label>
+                            <div class="block seen">
+                                <div class="imgbx">
+                                    <img src="">
+                                </div>
+                                <div class="details">
+                                    <div class="listHead">
+                                        <h4>Parichaya Simha</h4>
+                                        <p class="time">04:15</p>
+                                    </div>
+                                    <div class="message_p">
+                                        <p>Yesterday</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- status open -->
+                    <div class="statusBox hide">
+                        <div class="status_header">
+                            <div class="imgcontent">
+
+                                <div class="imgBx">
+                                    <img src="#">
+                                </div>
+                                <h3>name</h3>
+
+                            </div>
+                            <div class="views">
+                                <ion-icon name="eye"></ion-icon>
+                                <p id="viewcount"></p>
+                            </div>
+                            <div><ion-icon name="close"></ion-icon></div>
+                        </div>
+                    </div>
+                    <!-- status close here -->
+
+                </div>
+            </div>
+            <div class="box calls">
+                <div class="data">
+                    <div class="chatlist">
+                        <div class="block">
+                            <div class="imgbx green">
+                                <ion-icon name="link"></ion-icon>
+                            </div>
+                            <div class="details" id="create_call">
+                                <div class="listHead">
+                                    <h4>Create Call Link</h4>
+                                </div>
+                                <div class="message_p">
+                                    <p>Share a link for your ChitChat call</p>
+                                </div>
+                            </div>
+                        </div>
+                        <label>Recent</label>
+                        <div class="block">
+                            <div class="imgbx">
+                                <img src="#">
+                            </div>
+                            <div class="details">
+                                <div class="listHead">
+                                    <h4>#name</h4>
+                                </div>
+                                <div class="message_p incoming">
+                                    <p><ion-icon name="arrow-down"></ion-icon>#time</p>
+                                </div>
+                            </div>
+                            <ion-icon name="call" class="call call_btn"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- calling started -->
+            <div class="container_calling hide">
+                <!-- <div id="calling_box"> -->
+                <div id="calling_top">
+                    <h2>Username</h2>
+                    <p>Ringing</p>
+                </div>
+                <div id="calling_mid">
+                    <img src="https://t4.ftcdn.net/jpg/00/65/77/27/240_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
+                        alt="user">
+                    <div class="call_end">
+                        <ion-icon id="call_end" name="call"></ion-icon>
+                    </div>
+                </div>
+                <div id="calling_bottom">
+                    <ion-icon name="volume-high"></ion-icon>
+                    <ion-icon name="videocam"></ion-icon>
+                    <ion-icon name="mic-off"></ion-icon>
+                </div>
+                <!-- </div> -->
+            </div>
+            <!-- calling ended -->
+        </div>
+    </div>
+    <div class="chatBox hide">
+        <div class="chat_header">
+            <div class="imgcontent">
+                <ion-icon name="arrow-back-sharp" class="back"></ion-icon>
+                <div class="imgBx">
+                    <img src="">
+                </div>
+                <h3>#name <br><span>#Online</span></h3>
+            </div>
+            <div class="actionBtns">
+                <ion-icon name="videocam"></ion-icon>
+                <ion-icon name="call"></ion-icon>
+                <ion-icon name="ellipsis-vertical"></ion-icon>
+            </div>
+        </div>
+        <div class="messageBox">
+            <div class="message">#messaage<br><span class="time">#time</span>
+            </div>
+
+            <div class="messageInput">
+                <div class="input">
+                    <ion-icon name="happy-outline"></ion-icon>
+                    <input type="text" placeholder="Message" id="message">
+                    <ion-icon name="attach-outline" class="deg45" id="pin"></ion-icon>
+                    <ion-icon name="camera"></ion-icon>
+                </div>
+                <div class="mic"><ion-icon name="mic"></ion-icon></div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+    //create status
+    let status_add = document.querySelector(".block.create_status")
+    status_add.addEventListener("click", () => {
+
+        window.location.href = "status.html"
+    })
+
+
+</script>
+<script src="./script/messagepage.js"></script>
+
+
+</html>
