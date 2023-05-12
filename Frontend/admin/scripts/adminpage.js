@@ -1,4 +1,23 @@
 
+let token= localStorage.getItem("admin")
+
+window.addEventListener("load",()=>{
+    if(!token){
+        return   Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Please Login first!'
+          }).then((res)=>{
+            window.location.href = "adminlogin.html"
+          })
+    }
+    else{
+        display()
+    }
+})
+
+function display(){
+
 // Total Users
 let userCard=document.getElementById('user-card')
 let totalUser=document.getElementById('user-count');
@@ -10,7 +29,7 @@ fetch('https://wild-gray-gorilla-garb.cyclic.app/user/all')
 })
 .then((data)=>{
     // Userdata=needData.data;
-    console.log(data)
+    // console.log(data)
     displayUsers(data);
 })
 .catch((err)=>{
@@ -64,4 +83,6 @@ function displayUsers(data) {
             console.log(id)
         });
     })
+}
+
 }
