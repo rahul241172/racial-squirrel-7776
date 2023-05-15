@@ -63,9 +63,9 @@ Vistit on messagepage and click on your and for the other person do the same the
 ### Admin Routes
     - Get All Users :- /user/all
         - Method : GET
-    - Get User by their ID : /user/id (Pass ID in params)
+    - Get User by their ID :- /user/id (Pass ID in params)
         - Method : GET 
-    - Delete a User by their ID : /user/id (Pass ID in params)
+    - Delete a User by their ID :- /user/id (Pass ID in params)
         - Method : DELETE
 
 
