@@ -13,7 +13,7 @@ const room = urlParams.get("room")
 console.log(username, room)
 
 
-const socket = io("http://localhost:8000/", { transports: ["websocket"] });
+const socket = io("https://whatsapp-wz7q.onrender.com/", { transports: ["websocket"] });
 
 socket.emit("joinRoom", { username, room });
 

@@ -31,7 +31,7 @@ for(let btn of contact){
     btn.addEventListener("click",(e)=>{
         e.preventDefault();
         let name=e.target.innerText
-        window.location.href = `http://localhost:8000?q=${name}`
+        window.location.href = `https://whatsapp-wz7q.onrender.com?q=${name}`
         
     })
 }
