@@ -1,9 +1,13 @@
-const baseURL = "";
+const baseURL = "https://wild-gray-gorilla-garb.cyclic.app/";
 
 const register = document.getElementById("register");
 const sign = document.getElementById("signin");
 
-let radio = document.getElementsByName("gender");
+const adminLogin = document.getElementById("adminLogin");
+
+adminLogin.addEventListener("click",() => {
+   window.location = "./admin/adminlogin.html";
+})
 
 sign.addEventListener("submit",(e) => {
     e.preventDefault();
@@ -24,7 +28,9 @@ sign.addEventListener("submit",(e) => {
            return res.json();
         })
         .then((data) => {
-            console.log(data);
+         localStorage.setItem("token",data.token);
+         localStorage.setItem("username",data.username);
+         window.location = "../messagepage.html";
         })
         .catch((err) => {
            console.log(err.message);
@@ -47,20 +53,10 @@ function check(obj){
 register.addEventListener("submit",(e) => {
     e.preventDefault();
 
-    let genderVal;
-    for(let i=0;i<radio.length;i++){
-      if(radio[i].checked){
-        genderVal = radio[i].value;
-        break;
-    }
-}
-
     const userData = {
        name:register.name.value,
        email:register.email.value,
-       phone_number:register.num.value,
        password:register.pass.value,
-       gender:genderVal
     }
     const res = check(userData);
     if(res){
@@ -88,7 +84,7 @@ register.addEventListener("submit",(e) => {
 
 function check(obj){
    let check = false;
-   if(obj.name != "" && obj.email != "" && obj.phone_number != "" && obj.password != "" && obj.gender != ""){
+   if(obj.name != "" && obj.email != "" && obj.password != ""){
        check = true;
    }
    return check;

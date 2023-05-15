@@ -111,7 +111,7 @@
     border: 0.2px solid rgb(39,52,67);
     border-radius: 5px;
 }
-#register>input:nth-child(8){
+#register>input:nth-child(6){
     display: block;
     border: none;
     background-color: rgb(39,52,67);
@@ -124,34 +124,6 @@
 #register>p{
     margin-top: 40px;
     margin-bottom: 40px;
-}
-
-/* login with google button */
-
-.google-icon{
-    display: flex;
-    align-items: center;
-    gap:10px;
-    padding: 5px;
-    width: 20%;
-    margin: auto;
-    border: #3e7ee8;
-    background-color: #3e7ee8;
-    color: white;
-    margin: auto;
-    font-weight: bolder;
-    justify-content: space-around;
-    margin-top: 50px;
-}
-.google-icon p{
-    font-size: 18px;
-}
-.google-icon img{
-    width: 50px;
-}
-.google-icon+h3{
-    text-align: center;
-    margin-top: 20px;
 }
 
 
