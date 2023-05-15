@@ -1,4 +1,4 @@
-### ![](assets/chitchat.jpeg)
+### ![](Frontend/assets/chitchat.jpeg)
 
 # [ChitChat](https://whatsapplikeclone.netlify.app/)
 
@@ -32,24 +32,22 @@ Group Chat
 
 # HomePage
 
-![](assets/homepage.png)
+![](Frontend/assets/homepage.png)
 
 # Contact
 
-![](assets/contact.png)
+![](Frontend/assets/contact.png)
 
 # Status
 
-![](assets/status.png)
+![](Frontend/assets/status.png)
 
 # Admin
 
-![](assets/admin.png)
+![](Frontend/assets/admin.png)
 
-# How to run the Chat server
+# How to use 
 
-just go to Group chat folder and run command below:-
-
-# npm run server
+Vistit on messagepage and click on your and for the other person do the same they can chat with each other.
 
 
