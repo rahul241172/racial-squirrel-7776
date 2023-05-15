@@ -50,4 +50,22 @@ Group Chat
 
 Vistit on messagepage and click on your and for the other person do the same they can chat with each other.
 
+# API Endpoints
+
+### User Routes
+    - User Register :- /user/register 
+        - Method : POST
+        - Body : name, email, password
+    - User Login :- /user/login
+        - Method : POST
+        - Body : email, password
+        
+### Admin Routes
+    - Get All Users :- /user/all
+        - Method : GET
+    - Get User by their ID : /user/id (Pass ID in params)
+        - Method : GET 
+    - Delete a User by their ID : /user/id (Pass ID in params)
+        - Method : DELETE
+
 
